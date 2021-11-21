@@ -1,24 +1,26 @@
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES
-  ('Ronald', 'Firbank', 1, 1),
-  ('Virginia', 'Woolf', 1, 1),
-  ('Piers', 'Gaveston', 1, 0),
-  ('Charles', 'LeRoi', 2, 1),
-  ('Katherine', 'Mansfield', 2, 1),
-  ('Dora', 'Carrington', 3, 0),
-  ('Edward', 'Bellamy', 3, 0),
-  ('Montague', 'Summers', 3, 1),
-  ('Octavia', 'Butler', 3, 1),
-  ('Unica', 'Zurn', NULL, 1);
-  
-  INSERT INTO roles (id, title, salary, department_id)
-VALUES
-(10, 'Senior Developer', 80000, 3),
-(15, 'Junior Developer', 60000, 2),
-(20, 'Intern ', 40000, 1);
 
 INSERT INTO department(id,name)
 VALUES
-(5,'Main'),
-(5,'Second')
+(3,'Main'),
+(2,'Second')
+;
+  
+INSERT INTO roles (id, title, salary, department_id)
+VALUES
+(10, 'Senior Developer', 80000, 3),
+(15, 'Junior Developer', 60000, 2),
+(20, 'Intern ', 40000, 2);
 
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES
+  ('Ronald', 'Firbank', 10 ,NULL),
+  ('Virginia', 'Woolf', 15 ,1),
+  ('Piers', 'Gaveston', 10,1),
+  ('Charles', 'LeRoi', 15,1),
+  ('Katherine', 'Mansfield', 15,NULL),
+  ('Dora', 'Carrington', 20,5),
+  ('Edward', 'Bellamy', 10,5),
+  ('Montague', 'Summers', 15,5),
+  ('Octavia', 'Butler', 15,5),
+  ('Unica', 'Zurn', 15,5)
+  ;
