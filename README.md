@@ -32,7 +32,8 @@ Made By Jovan
 
 ## Usage
 
-1. Start application with "npm". 2. Answer each prompt.
+1. Start application with "npm".
+2. Answer each prompt.
 
 ## Tests
 
