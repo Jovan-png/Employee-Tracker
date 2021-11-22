@@ -65,7 +65,7 @@ const menu = ()=>{
    }
 })
 }
-
+// Adds department with user input
 const addDepartment = ()=>{
     db.query(`SELECT * FROM department`, (err,rows) => {
 
@@ -98,7 +98,7 @@ menu()
 })
 }
 
-
+// Adds role with user input
 const addRole = () =>{
     db.query(`SELECT * FROM department`, (err,rows) => {
     const questions =[
@@ -153,6 +153,9 @@ const addRole = () =>{
     })
 })
 }
+
+
+// Add employee  with user input
 const addEmployee = ()=>{
     db.query(`SELECT *  FROM roles`, (err,rows) => {
     const questions = [
@@ -188,7 +191,6 @@ const addEmployee = ()=>{
             default: 'NULL'
         },
     ]
-    console.table(rows)
     inquirer
     .prompt(questions)
     .then(data=>{
@@ -198,6 +200,8 @@ const addEmployee = ()=>{
 })
 }
 
+
+// Updates employee role with user input
 const updateEmployee = ()=>{
     db.query(`SELECT * FROM roles`, (err,rows)=>{
     db.query(`SELECT * FROM employee`, (err,results)=>{
@@ -234,7 +238,6 @@ console.table(results)
     inquirer
     .prompt(questions)
 .then(data =>{
-    console.log(data.employ_role)
     db.query(`UPDATE employee SET role_id = '${data.employ_role}' WHERE first_name = '${data.employ_list}'`)
     menu()
 })
@@ -244,6 +247,7 @@ console.table(results)
 }
 
 
+//  allows server to login with my info might need to be changed
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -251,6 +255,9 @@ const db = mysql.createConnection({
     database: 'company'
 })
 
+
+
+// Connects database and starts server.
 db.connect(err =>{
 if (err)throw err;
 console.log('Database Connected')
